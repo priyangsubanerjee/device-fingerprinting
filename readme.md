@@ -1,6 +1,7 @@
 ---
-title: "Device Fingerprint Generator"
-author: "Priyangsu"
+Project: "Device Fingerprint Generator"
+Author: "Priyangsu"
+Published: "25 Feb 2025"
 ---
 
 ## Device Fingerprint Generator
