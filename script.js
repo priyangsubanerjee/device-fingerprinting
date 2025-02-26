@@ -34,12 +34,6 @@ function generateDeviceFingerprint() {
     canvasHash: getCanvasFingerprint(),
   };
 
-  navigator.userAgentData.getHighEntropyValues(["platform", "platformVersion"]).then((n) => {
-    console.log(n);
-  });
-
-  console.log("Device Fingerprint:", fingerprint);
-
   return hashFingerprint(fingerprint);
 }
 
