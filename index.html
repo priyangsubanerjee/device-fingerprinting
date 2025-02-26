@@ -4,9 +4,58 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     <script src="./script.js" defer></script>
   </head>
-  <body>
-    Device fingerpring: <span id="fingerprint"></span>
+  <body class="h-svh bg-neutral-100 md:pt-20 flex justify-center">
+    <div class="max-w-xl h-fit w-full bg-white rounded-md p-6">
+      <div class="flex items-center gap-3 mt-7 md:mt-0">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8" viewBox="0 0 24 24">
+          <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" color="currentColor">
+            <path
+              d="M2.5 8.187c.104-2.1.415-3.41 1.347-4.34c.93-.932 2.24-1.243 4.34-1.347M21.5 8.187c-.104-2.1-.415-3.41-1.347-4.34c-.93-.932-2.24-1.243-4.34-1.347m0 19c2.1-.104 3.41-.415 4.34-1.347c.932-.93 1.243-2.24 1.347-4.34M8.187 21.5c-2.1-.104-3.41-.415-4.34-1.347c-.932-.93-1.243-2.24-1.347-4.34m14-.313V11a4.5 4.5 0 1 0-9 0v4.5"
+            />
+            <path d="M13.5 12.5V11a1.5 1.5 0 0 0-3 0v5.5m3-1v2" />
+          </g>
+        </svg>
+        <h1 class="font-semibold text-xl text-neutral-800">Device fingerprint generator</h1>
+      </div>
+      <p class="text-neutral-600 mt-2 text-sm leading-7 pl-11">
+        Device fingerprinting is a technique used to uniquely identify a device based on its hardware, software, and network characteristics. It
+        collects various attributes from a user's device and creates a unique "fingerprint" that can be used for tracking, authentication, fraud
+        detection, and security purposes.
+      </p>
+      <div class="flex items-center mt-6 pl-11">
+        <span class="text-[10px] text-neutral-600 tracking-[1.3px] ml-auto">FOR EDUCATIONAL PURPOSES</span>
+      </div>
+      <div class="border-y py-4 w-full border-neutral-200 mt-6 text-sm flex items-center gap-3">
+        <span>Fingerprint for this device: </span>
+        <span class="font-mono font-medium" id="fingerprint"></span>
+      </div>
+      <div class="flex flex-wrap items-center mt-6 gap-4 md:gap-6">
+        <a href="https://github.com/priyangsubanerjee/device-fingerprinting" class="flex items-center gap-2 text-sm">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <path
+              fill="currentColor"
+              d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"
+            />
+          </svg>
+          <span>Source code</span>
+        </a>
+        <a href="https://en.wikipedia.org/wiki/Device_fingerprint" class="flex items-center gap-2 text-sm">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <path
+              fill="currentColor"
+              d="M12.09 13.119c-.936 1.932-2.217 4.548-2.853 5.728c-.616 1.074-1.127.931-1.532.029c-1.406-3.321-4.293-9.144-5.651-12.409c-.251-.601-.441-.987-.619-1.139q-.27-.225-1.122-.271q-.314-.034-.313-.159v-.455l.052-.045c.924-.005 5.401 0 5.401 0l.051.045v.434q0 .177-.225.176l-.564.031c-.485.029-.727.164-.727.436c0 .135.053.33.166.601c1.082 2.646 4.818 10.521 4.818 10.521l.136.046l2.411-4.81l-.482-1.067l-1.658-3.264s-.318-.654-.428-.872c-.728-1.443-.712-1.518-1.447-1.617c-.207-.023-.313-.05-.313-.149v-.468l.06-.045h4.292l.113.037v.451c0 .105-.076.15-.227.15l-.308.047c-.792.061-.661.381-.136 1.422l1.582 3.252l1.758-3.504c.293-.64.233-.801.111-.947c-.07-.084-.305-.22-.812-.24l-.201-.021a.23.23 0 0 1-.145-.051a.15.15 0 0 1-.067-.129v-.427l.061-.045c1.247-.008 4.043 0 4.043 0l.059.045v.436c0 .121-.059.178-.193.178c-.646.03-.782.095-1.023.439c-.12.186-.375.589-.646 1.039l-2.301 4.273l-.065.135l2.792 5.712l.17.048l4.396-10.438c.154-.422.129-.722-.064-.895c-.197-.172-.346-.273-.857-.295l-.42-.016a.26.26 0 0 1-.152-.045c-.043-.029-.072-.075-.072-.119v-.436l.059-.045h4.961l.041.045v.437c0 .119-.074.18-.209.18c-.648.03-1.127.18-1.443.421c-.314.255-.557.616-.736 1.067c0 0-4.043 9.258-5.426 12.339c-.525 1.007-1.053.917-1.503-.031c-.571-1.171-1.773-3.786-2.646-5.71z"
+            />
+          </svg>
+          <span>Learn more</span>
+        </a>
+        <a href="https://priyangsu.dev/" class="flex items-center gap-1 text-sm">
+          <img src="/assets/priyangsu-avatar.svg" class="h-10" />
+          <span>priyangsubanerjee</span>
+        </a>
+      </div>
+    </div>
   </body>
 </html>

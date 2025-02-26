@@ -5,9 +5,7 @@ function getWebGLFingerprint() {
   if (!gl) return "No WebGL support";
 
   const debugInfo = gl.getExtension("WEBGL_debug_renderer_info");
-  return debugInfo
-    ? gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL) // Extract GPU model
-    : "Unknown GPU";
+  return debugInfo ? gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL) : "Unknown GPU";
 }
 
 function getCanvasFingerprint() {
@@ -16,9 +14,9 @@ function getCanvasFingerprint() {
 
   ctx.textBaseline = "top";
   ctx.font = "14px Arial";
-  ctx.fillText("Hello, fingerprinting!", 10, 10); // Render text to canvas
+  ctx.fillText("Hello, fingerprinting!", 10, 10);
 
-  return canvas.toDataURL(); // Convert to Base64 string
+  return canvas.toDataURL();
 }
 
 function generateDeviceFingerprint() {
@@ -36,6 +34,12 @@ function generateDeviceFingerprint() {
     canvasHash: getCanvasFingerprint(),
   };
 
+  navigator.userAgentData.getHighEntropyValues(["platform", "platformVersion"]).then((n) => {
+    console.log(n);
+  });
+
+  console.log("Device Fingerprint:", fingerprint);
+
   return hashFingerprint(fingerprint);
 }
 
@@ -45,12 +49,11 @@ function hashFingerprint(fingerprint) {
   let hash = 0;
   for (let i = 0; i < jsonString.length; i++) {
     hash = (hash << 5) - hash + jsonString.charCodeAt(i);
-    hash |= 0; // Convert to 32-bit integer
+    hash |= 0;
   }
   return hash.toString();
 }
 
-// Generate Unique Fingerprint
 const deviceId = generateDeviceFingerprint();
 document.getElementById("fingerprint").textContent = deviceId;
 console.log("Device Fingerprint:", deviceId);
