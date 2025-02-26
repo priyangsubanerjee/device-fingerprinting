@@ -22,8 +22,13 @@ This tool is designed for ethical and legal use cases only. Users are expected t
 - **Ensure compliance** – Follow local regulations (e.g., GDPR, CCPA) when collecting and using fingerprints.
 - **Avoid malicious intent** – Any misuse for fingerprinting users without consent is strictly discouraged.
 
+### Live Demo
+
+You can try the **Device Fingerprint Generator** live at:  
+[View Live](https://priyangsubanerjee.github.io/device-fingerprinting/)
+
 ### Author
 
-Developed by **@priyangsubanerjee**, this project aims to provide an open-source, privacy-conscious way to generate device fingerprints without relying on third-party services.
+Developed by **[@priyangsubanerjee](https://github.com/priyangsubanerjee)**, this project aims to provide an open-source, privacy-conscious way to generate device fingerprints without relying on third-party services.
 
 For contributions, discussions, or concerns, feel free to open an issue or contribute to the repository.
