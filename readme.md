@@ -14,6 +14,26 @@ The **Device Fingerprint Generator** is a web-based tool that uniquely identifie
 - Generates a unique fingerprint without storing personal data.
 - Lightweight and efficient for real-time identification.
 
+### Parameters Used
+
+The fingerprint is generated based on the following parameters:
+
+```js
+{
+  userAgent: navigator.userAgent,
+  language: navigator.language,
+  screenResolution: `${screen.width}x${screen.height}`,
+  colorDepth: screen.colorDepth,
+  timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+  platform: navigator.platform,
+  hardwareConcurrency: navigator.hardwareConcurrency,
+  deviceMemory: navigator.deviceMemory || "unknown",
+  touchSupport: "ontouchstart" in window || navigator.maxTouchPoints > 0,
+  webGLGPU: getWebGLFingerprint(),
+  canvasHash: getCanvasFingerprint(),
+}
+```
+
 ### Fair Usage Policy
 
 This tool is designed for ethical and legal use cases only. Users are expected to:
